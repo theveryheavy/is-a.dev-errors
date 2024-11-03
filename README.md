@@ -23,10 +23,10 @@ Well, it's a project for a "small event/challenge" hosted on the is-a.dev Discor
 - JavaScript Challenge
 - 429 errors
 
-## Who It Was Created For
+## Who It Was Created For?
 
 All of the templates were created for is-a.dev. You can use them as templates for your own website.
 
-## License
+## License?
 
-None! Yay!
+Who needs that?
