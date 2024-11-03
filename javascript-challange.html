@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Challenge</title>
+    <link rel="icon" href="https://cdn.discordapp.com/icons/830872854677422150/ad5b729acd5a20289afae1ab5a1a5d39.webp?size=16" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .no-select {
+            user-select: none;
+        }
+        .error-box {
+            padding: 1em;
+            margin: 1em auto;
+            max-width: 600px;
+            border-left: 4px solid #9b7dff;
+            border-radius: 5px;
+            background-color: #9b7dff20;
+        }
+        .footer-text {
+            color: #6c757d;
+            font-size: 0.875rem;
+            margin-top: 2rem;
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I') || (event.ctrlKey && event.shiftKey && event.key === 'C')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body class="bg-[#0f0c19] text-white flex items-center justify-center min-h-screen no-select">
+    <div class="text-center">
+        <img src="https://cdn.discordapp.com/icons/830872854677422150/ad5b729acd5a20289afae1ab5a1a5d39.webp?size=128" alt="Logo" class="mx-auto mb-8 w-40 h-40 rounded-full border-8 border-gray-700 no-select" ondragstart="return false;">
+        <div class="text-4xl font-bold mb-4 text-[#9b7dff]">Checking your browser before accessing</div>
+        <div class="error-box text-xl mb-4">::IM_UNDER_ATTACK_BOX::</div>
+        <div class="footer-text">
+            <p>Your request ID is: <strong>::RAY_ID::</strong></p>
+            Try completing the challenge above.<br>
+            If you need further assistance, contact the site administrator.
+        </div>
+    </div>
+</body>
+</html>
