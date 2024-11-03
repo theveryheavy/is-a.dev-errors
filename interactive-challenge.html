@@ -1,0 +1,98 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .no-select {
+            user-select: none;
+        }
+        .footer-text {
+            color: #6c757d;
+            font-size: 0.875rem;
+            margin-top: 2rem;
+        }
+        .quiz-container {
+            background-color: #9b7dff20;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #9b7dff;
+            max-width: 600px;
+            margin: 1em auto;
+        }
+        .quiz-question {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .quiz-options button {
+            background-color: #162447;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            margin: 0.5rem 2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .quiz-options button:hover {
+            background-color: #1f4068;
+        }
+        .quiz-feedback {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I') || (event.ctrlKey && event.shiftKey && event.key === 'C')) {
+                event.preventDefault();
+            }
+        });
+		
+        function checkAnswer(selectedOption) {
+            const correctAnswer = "Option 2";
+            const feedbackElement = document.getElementById("quiz-feedback");
+
+            if (selectedOption === correctAnswer) {
+				feedbackElement.style.display = 'block';
+                feedbackElement.textContent = "Correct! Redirecting...";
+                feedbackElement.classList.add("text-green-500");
+                feedbackElement.classList.remove("text-red-500");
+                setTimeout(() => {
+                    window.location.href = "https://is-a.dev";
+                }, 2000);
+            } else {
+				feedbackElement.style.display = 'block';
+                feedbackElement.textContent = "Incorrect. Try again.";
+                feedbackElement.classList.add("text-red-500");
+                feedbackElement.classList.remove("text-green-500");
+				setTimeout(() => {  feedbackElement.style.display = 'none'; }, 1000);
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#0f0c19] text-white flex items-center justify-center min-h-screen no-select">
+    <div class="text-center">
+        <img src="https://cdn.discordapp.com/icons/830872854677422150/ad5b729acd5a20289afae1ab5a1a5d39.webp?size=128" alt="Logo" class="mx-auto mb-8 w-40 h-40 rounded-full border-8 border-gray-700 no-select" ondragstart="return false;">
+        <div class="text-4xl font-bold mb-4 text-[#9b7dff]">Interactive Challenge</div>
+        <div class="quiz-container">
+            <div class="quiz-question">What is the capital of France?</div>
+            <div class="quiz-options">
+                <button onclick="checkAnswer('Option 1')">Berlin</button>
+                <button onclick="checkAnswer('Option 2')">Paris</button>
+                <button onclick="checkAnswer('Option 3')">Madrid</button>
+            </div>
+            <div id="quiz-feedback" class="quiz-feedback"></div>
+        </div>
+        <div class="footer-text">
+			      Your request ID is: <strong>::RAY_ID::</strong><br>
+            Try completing the challenge above.<br>
+            If you need further assistance, contact the site administrator.<br>
+        </div>
+    </div>
+</body>
+</html>
